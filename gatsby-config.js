@@ -28,20 +28,11 @@ module.exports = {
       },
       __key: "images",
     },
-     {
-        resolve: "gatsby-source-magento2",
-        options: {
-            graphqlEndpoint: process.env.MAGENTO_GRAPHQL_ENDPOINT,
-
-
-            // // this is optional
-            // queries: {
-            //     // see example query in src/nodes/queries/products.js
-            //     allProductsQuery: `... custom GraphQL query for fetching all the products you need to publish on Gatsby website ...`,
-            //     // see example query in src/nodes/queries/categories.js
-            //     categoryQuery: `... custom GraphQL query for fetching all the categories & product ids ...`
-            // }
-        }
+    {
+      resolve: "gatsby-source-magento2",
+      options: {
+          graphqlEndpoint: process.env.MAGENTO_GRAPHQL_ENDPOINT,
+      }
     }
   ],
 };

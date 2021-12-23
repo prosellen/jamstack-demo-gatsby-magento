@@ -1,8 +1,8 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql } from "gatsby";
+import React from "react";
 
-export default function SingleProductPage({ data: { magentoProduct } }) {
-  const product = data.magentoProduct
+export default function SingleProductPage({ data }) {
+  const product = data.magentoProduct;
   return (
     <>
       <div>
@@ -13,7 +13,7 @@ export default function SingleProductPage({ data: { magentoProduct } }) {
 }
 
 export const query = graphql`
-  query($urlKey: String!) {
+  query ($urlKey: String!) {
     magentoProduct(url_key: { eq: $urlKey }) {
       id
       name

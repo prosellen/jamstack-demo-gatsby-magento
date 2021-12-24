@@ -1,6 +1,6 @@
 import { graphql } from "gatsby";
 import * as React from "react";
-import ProductList from "../../components/ProductList";
+import ProductList from "../../components/ProductList.jsx";
 // markup
 const IndexPage = ({ data }) => {
   const products = data.products.nodes;

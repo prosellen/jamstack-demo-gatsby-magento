@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 const path = require("path");
 
 async function turnProductsIntoPages({ graphql, actions }) {
@@ -69,6 +70,8 @@ async function turnCategoriesIntoPages({ graphql, actions }) {
   });
 }
 
+// CommonJS Export?!?
+// This function is run by NodeJS, while all other exports are handled by Gatsby ... which uses ESM to enable the "new" export behaviour
 exports.createPages = async (params) => {
   await Promise.all([
     turnProductsIntoPages(params),

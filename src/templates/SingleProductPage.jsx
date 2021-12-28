@@ -13,7 +13,7 @@ export default function SingleProductPage({ data }) {
 }
 
 export const query = graphql`
-  query($urlKey: String!) {
+  query ($urlKey: String!) {
     magentoProduct(url_key: { eq: $urlKey }) {
       id
       name

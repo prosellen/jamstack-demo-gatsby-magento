@@ -24,7 +24,7 @@
     "gatsby-plugin-sitemap": "5.3.0",
     "gatsby-plugin-styled-components": "5.3.0",
     "gatsby-source-filesystem": "4.3.0",
-    "gatsby-source-magento2": "2.4.6",
+    "gatsby-source-magento2": "github:prosellen/gatsby-source-magento2#fix/touchNode",
     "gatsby-transformer-sharp": "4.3.0",
     "normalize.css": "8.0.1",
     "react": "^17.0.1",

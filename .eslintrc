@@ -11,7 +11,16 @@
   ],
   "rules": {
     "react/prop-types": 0,
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
   },
   "env": {
     "browser": true,
@@ -21,16 +30,6 @@
     "ecmaVersion": 2020,
     "ecmaFeatures": {
       "jsx": true
-    }
-  },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
-      }
     }
   }
 }

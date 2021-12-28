@@ -1,28 +1,29 @@
+const path = require("path");
+
 async function turnProductsIntoPages({ graphql, actions }) {
   // Get the template for this page
-  const productTemplate = path.resolve('./src/templates/SingleProductPage.jsx');
+  const productTemplate = path.resolve("./src/templates/SingleProductPage.jsx");
 
-  // Query all recipes
+  // Query all products from `turnProductsIntoPages`
   const { data } = await graphql(`
     query {
       products: allMagentoProduct {
         edges {
           node {
-              url_key
+            url_key
           }
         }
       }
     }
   `);
 
-  // Loop over each recipes and create a page for each recipe
-  data.products.nodes.forEach((product) => {
+  // Loop over all products and create a page for each one
+  data.products.edges.forEach(({ node }) => {
     actions.createPage({
-      // What is the URL for this new page??
-      path: `products/${product.url_key}`,
+      path: `products/${node.url_key}`,
       component: productTemplate,
       context: {
-        urlKey: product.url_key,
+        urlKey: node.url_key,
       },
     });
   });
@@ -30,17 +31,18 @@ async function turnProductsIntoPages({ graphql, actions }) {
 
 async function turnCategoriesIntoPages({ graphql, actions }) {
   // Get the template for this page
-  const productTemplate = path.resolve('./src/templates/SingleProductPage.jsx');
+  const productTemplate = path.resolve(
+    "./src/templates/SingleCategoryPage.jsx"
+  );
 
   // Query all recipes
   const { data } = await graphql(`
     query {
-      categories: allMagentoProduct {
+      categories: allMagentoCategory {
         edges {
           node {
-              magento_id
-              url_key
-              url_path
+            url_key
+            magento_id
           }
         }
       }
@@ -48,13 +50,13 @@ async function turnCategoriesIntoPages({ graphql, actions }) {
   `);
 
   // Loop over each recipes and create a page for each recipe
-  data.categories.nodes.forEach((category) => {
+  data.categories.edges.forEach(({ node }) => {
     actions.createPage({
-      path: `categories/${category.url_key}`,
+      path: `categories/${node.url_key}`,
       component: productTemplate,
       context: {
-          category_id: node.magento_id,
-          url_key: node.url_key,
+        categoryId: node.magento_id,
+        urlKey: node.url_key,
       },
     });
 
@@ -67,6 +69,9 @@ async function turnCategoriesIntoPages({ graphql, actions }) {
   });
 }
 
-exports.createPages = (params) => {
-   await Promise.all([turnProductsIntoPages(params), turnCategoriesIntoPages(params)]);
+exports.createPages = async (params) => {
+  await Promise.all([
+    turnProductsIntoPages(params),
+    turnCategoriesIntoPages(params),
+  ]);
 };

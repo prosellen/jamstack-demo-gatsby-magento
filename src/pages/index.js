@@ -1,7 +1,10 @@
 import { Link } from "gatsby";
 import * as React from "react";
 // markup
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  console.log({data})
+  const products = data.products.nodes;
+
   return (
     <main>
       <title>Produkt Übersicht</title>

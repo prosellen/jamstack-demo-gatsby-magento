@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       <GlobalStyles />
       <Typography />
       <SiteWrapper>
-        <header>Header</header>
+        <header>LUMA</header>
         <Nav />
         {children}
         <Footer />

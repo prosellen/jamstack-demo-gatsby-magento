@@ -1,4 +1,4 @@
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 
@@ -10,7 +10,7 @@ const HeaderStyle = styled.header`
     padding: 0;
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr repeat(3, minmax(80px, 150px));
+    grid-template-columns: repeat(auto-fill, minmax(80px, 150px));
     gap: 0.5rem;
     align-items: center;
 
@@ -44,15 +44,40 @@ const NavStyles = styled.nav`
   }
 `;
 
+function NavLink({ navigationNode }) {
+  return (
+    <li>
+      <Link to={navigationNode.url_path}>{navigationNode.name}</Link>
+    </li>
+  );
+}
+
 export default function Nav() {
+  const data = useStaticQuery(graphql`
+    query {
+      nav: allMagentoCategory(
+        filter: { level: { eq: 2 }, include_in_menu: { eq: 1 } }
+        sort: { order: ASC, fields: position }
+      ) {
+        nodes {
+          name
+          level
+          position
+          id
+          url_path
+        }
+      }
+    }
+  `);
+
   return (
     <HeaderStyle>
       <NavStyles>
         <ul>
-          <li>
-            <H1Style>LUMA</H1Style>
-          </li>
-          <li>
+          {data.nav.nodes.map((navigationNode) => (
+            <NavLink key={navigationNode.id} navigationNode={navigationNode} />
+          ))}
+          {/* <li>
             <Link to="/">Home</Link>
           </li>
           <li>
@@ -60,7 +85,7 @@ export default function Nav() {
           </li>
           <li>
             <Link to="/categories/">Categories</Link>
-          </li>
+          </li> */}
         </ul>
       </NavStyles>
     </HeaderStyle>

@@ -57,7 +57,7 @@ export default function Nav() {
     query {
       nav: allMagentoCategory(
         filter: { level: { eq: 2 }, include_in_menu: { eq: 1 } }
-        sort: { order: ASC, fields: position }
+        sort: {order: [ASC, ASC], fields: [level, position]}
       ) {
         nodes {
           name
@@ -65,6 +65,8 @@ export default function Nav() {
           position
           id
           url_path
+          magento_id
+          parent_category_id
         }
       }
     }

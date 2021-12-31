@@ -6,10 +6,12 @@ const FooterStyles = styled.footer`
   font-size: 0.95rem;
 `;
 
-export default function Footer() {
+const Footer = () => {
   return (
     <FooterStyles>
       <p>&copy; {new Date().getFullYear()} by Lettuce Entertain You</p>
     </FooterStyles>
   );
-}
+};
+
+export default Footer;

@@ -4,12 +4,10 @@ import React from "react";
 export default function SingleCategoryPage({ data }) {
   const { name, id } = data.magentoCategory;
   return (
-    <>
-      <div>
-        <h1>{name}</h1>
-        <div>{id}</div>
-      </div>
-    </>
+    <div>
+      <h1>{name}</h1>
+      <div>{id}</div>
+    </div>
   );
 }
 

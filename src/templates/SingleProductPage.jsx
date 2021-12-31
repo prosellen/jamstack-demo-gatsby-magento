@@ -4,11 +4,9 @@ import React from "react";
 export default function SingleProductPage({ data }) {
   const product = data.magentoProduct;
   return (
-    <>
-      <div>
-        <h2>{product.name}</h2>
-      </div>
-    </>
+    <div>
+      <h2>{product.name}</h2>
+    </div>
   );
 }
 

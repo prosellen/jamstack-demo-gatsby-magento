@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
+import { useCategoryList } from '../hooks/useCategoryList';
 
 function CategoryProduct({ category }) {
   return (
@@ -11,7 +12,9 @@ function CategoryProduct({ category }) {
   );
 }
 
-export default function CategoryList({ categories }) {
+export default function CategoryList() {
+  const categories = useCategoryList();
+
   return (
     <div>
       {categories.map((category) => (

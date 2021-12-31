@@ -1,37 +1,14 @@
-import { graphql } from "gatsby";
 import * as React from "react";
 import ProductList from "../../components/ProductList.jsx";
-// markup
-const IndexPage = ({ data }) => {
-  const products = data.products.nodes;
 
+// markup
+const ProductIndexPage = function () {
   return (
     <main>
       <title>Produkt Übersicht</title>
-      <ProductList products={products} />
+      <ProductList />
     </main>
   );
 };
 
-export default IndexPage;
-
-export const query = graphql`
-  query ProductQuery {
-    products: allMagentoProduct {
-      nodes {
-        url_key
-        sku
-        name
-        id
-        price {
-          regularPrice {
-            amount {
-              currency
-              value
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+export default ProductIndexPage;

@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
+import { useProductList } from '../hooks/useProductList';
 
 function SingleProduct({ product }) {
   return (
@@ -12,7 +13,9 @@ function SingleProduct({ product }) {
   );
 }
 
-export default function ProductList({ products }) {
+export default function ProductList() {
+  const products = useProductList();
+
   return (
     <div>
       {products.map((product) => (

@@ -1,6 +1,6 @@
 {
   "extends": [
-    "airbnb-base",
+    "airbnb",
     "prettier",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
@@ -11,8 +11,22 @@
     "react"
   ],
   "rules": {
+    "import/extensions": 0,
     "react/prop-types": 0,
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/function-component-definition": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+          ".mdx"
+        ],
+      },
+    ]
   },
   "env": {
     "browser": true,

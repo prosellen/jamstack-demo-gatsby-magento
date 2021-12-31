@@ -1,17 +1,15 @@
 import { Link } from "gatsby";
 import React from "react";
 
-function CategoryProduct({ category }) {
+const CategoryProduct = ({ category }) => {
   return (
-    <>
-      <Link to={`/categories/${category.url_key}`}>
-        <h2>{category.name}</h2>
-      </Link>
-    </>
+    <Link to={`/categories/${category.url_key}`}>
+      <h2>{category.name}</h2>
+    </Link>
   );
-}
+};
 
-export default function CategoryList({ categories }) {
+const CategoryList = ({ categories }) => {
   return (
     <div>
       {categories.map((category) => (
@@ -19,4 +17,6 @@ export default function CategoryList({ categories }) {
       ))}
     </div>
   );
-}
+};
+
+export default CategoryList;

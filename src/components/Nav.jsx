@@ -44,7 +44,7 @@ const NavStyles = styled.nav`
   }
 `;
 
-export default function Nav() {
+const Nav = () => {
   return (
     <HeaderStyle>
       <NavStyles>
@@ -65,4 +65,6 @@ export default function Nav() {
       </NavStyles>
     </HeaderStyle>
   );
-}
+};
+
+export default Nav;

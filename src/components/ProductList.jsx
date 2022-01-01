@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
 
-function SingleProduct({ product }) {
+const SingleProduct = ({ product }) => {
   return (
     <>
       <Link to={`/products/${product.url_key}`}>
@@ -10,9 +10,9 @@ function SingleProduct({ product }) {
       <p>SKU: {product.sku}</p>
     </>
   );
-}
+};
 
-export default function ProductList({ products }) {
+const ProductList = ({ products }) => {
   return (
     <div>
       {products.map((product) => (
@@ -20,4 +20,6 @@ export default function ProductList({ products }) {
       ))}
     </div>
   );
-}
+};
+
+export default ProductList;

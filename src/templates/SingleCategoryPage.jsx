@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 
-export default function SingleCategoryPage({ data }) {
+const SingleCategoryPage = ({ data }) => {
   const { name, id } = data.magentoCategory;
   return (
     <div>
@@ -9,7 +9,9 @@ export default function SingleCategoryPage({ data }) {
       <div>{id}</div>
     </div>
   );
-}
+};
+
+export default SingleCategoryPage;
 
 export const query = graphql`
   query ($urlKey: String!) {

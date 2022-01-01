@@ -14,7 +14,7 @@ const SiteWrapper = styled.div`
   margin: 0 auto 4rem auto;
 `;
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
@@ -27,4 +27,6 @@ export default function Layout({ children }) {
       </SiteWrapper>
     </>
   );
-}
+};
+
+export default Layout;

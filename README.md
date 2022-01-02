@@ -4,51 +4,71 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  JAMstack Demo: Gatsby & Magento2
 </h1>
+
+## 👷‍♂️ IMPORTANT: POC & WIP
+
+This is a Proof Of Concept and still a Work In Progress.
+So don't be alarmed if it looks like 💩, right now.
+
+Note: For testing purpose, the app is configured to only fetch **5 products**. You can edit the `pageSize` in [./src/graphql/allProductsQuery.js]() if you want to experiment with more products.
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+0. Make sure you have the core dependencies installed:
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+- A current version of [git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) - Version 16+
+- (Optionally:) This project comes with some pre-configuration for [VS Code](https://code.visualstudio.com/) but will work with pretty much every IDE
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+1. Clone this repo & install dependencies
 
-2.  **Start developing.**
+   ```bash
+   # clone repo
+   git clone https://github.com/prosellen/jamstack-demo-gatsby-magento.git
 
-    Navigate into your new site’s directory and start it up.
+   # change to the project directory
+   cd jamstack-demo-gatsby-magento
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+   # install node dependencies (this will take a couple of minutes)
+   npm install
+   ```
 
-3.  **Open the code and start customizing!**
+2. **Configure the app**
 
-    Your site is now running at http://localhost:8000!
+   The app needs a GraphQL endpoint ... which we do not push to GitHub for security reasons.
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+   Nake a copy of the `.env-template` file and name it `.env`.  
+   Then, add the GraphQL of your Magento2 installation into this file:
 
-4.  **Learn more**
+   ```txt
+   MAGENTO_GRAPHQL_ENDPOINT=http://[magento.installation]/graphql
+   ```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+3. **Start the dev server**
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   Start the local dev server and
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   ```bash
+   # ... in the project directory:
+   npm run develop
+   ```
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+4. **Open the code and start customizing!**
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   Your site is now running at <http://localhost:8000>!
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+5. **Learn more**
 
-## 🚀 Quick start (Gatsby Cloud)
+   - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+   - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+   - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+   - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+   - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+   - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)

@@ -3,10 +3,12 @@
   "editor.formatOnSave": true,
   // ... but turn it off for JS and JSX, since that will be handled via eslint
   "[javascript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null,
   },
   "[javascriptreact]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null,
   },
   // show eslint icon at bottom toolbar
   "eslint.alwaysShowStatus": true,
@@ -17,5 +19,5 @@
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#663399",
     "titleBar.inactiveBackground": "#321a4b"
-  }
+  },
 }

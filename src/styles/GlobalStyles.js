@@ -9,16 +9,20 @@ const GlobalStyles = createGlobalStyle`
     --grey: #efefef;
     --blue: rgba(30,104,152,1);
   }
+html, body {
+  height: 100%;
+}
   html {
-    font-size: 100%;
-    height: 100%
+    font-size: 62.5%;
   }
   body {
-    font-size: 1rem;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, var(--blue) 100%);
-    background-attachment: fixed;
-    overflow-y: scroll;
+    background-color: #fff;
+    color: #333;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.42857143;
+    font-size: 1.4rem;
   }
   fieldset {
     border-color: rgba(0,0,0,0.1);
@@ -44,21 +48,6 @@ const GlobalStyles = createGlobalStyle`
     image-rendering: pixelated;
   }
   /* Scrollbar Styles */
-  body::-webkit-scrollbar {
-    width: 12px;
-  }
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--red) var(--white);
-  }
-  body::-webkit-scrollbar-track {
-    background: var(--white);
-  }
-  body::-webkit-scrollbar-thumb {
-    /* background-color: var(--red) ; */
-    border-radius: 6px;
-    /* border: 3px solid var(--white); */
-  }
   hr {
     border: 0;
     height: 8px;
